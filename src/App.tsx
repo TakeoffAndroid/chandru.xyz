@@ -1,13 +1,13 @@
 import { CssBaseline } from "@mui/material";
-import NavigationDrawer from "./drawer";
 import Grid from "@mui/material/Grid";
 import { useState } from "react";
-import { DrawerType } from "./drawerItem";
 import AboutPage from "./pages/about";
 import ExperiencePage from "./pages/experience";
 import EducationPage from "./pages/education";
 import AchievementPage from "./pages/achievements";
 import ContactPage from "./pages/contacts";
+import {DrawerType} from "./component/drawerItem";
+import NavigationDrawer from "./component/drawer";
 
 export default function App() {
   const [drawerType, setPage] = useState<DrawerType>();
