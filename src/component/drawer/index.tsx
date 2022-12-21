@@ -1,25 +1,23 @@
 import Box from "@mui/material/Box";
 import MenuList from "@mui/material/MenuList";
-import DrawerItem, { DrawerType } from "../drawerItem";
+import DrawerItem, {DrawerType} from "../drawerItem";
 import Avatar from "@mui/material/Avatar";
-import { Stack } from "@mui/material";
+import {Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 
-export default function NavigationDrawer({ onDrawerItemClicked }: any) {
+export default function NavigationDrawer() {
 
   const renderDrawerItems = () => {
-    const drawerItems = [
-      DrawerType.ABOUT,
-      DrawerType.EXPERIENCE,
-      DrawerType.EDUCATION,
-      DrawerType.ACHIEVEMENTS,
-      DrawerType.CONTACTS
-    ];
-    return drawerItems.map((element: DrawerType) =>
+      return [
+        DrawerType.ABOUT,
+        DrawerType.EXPERIENCE,
+        DrawerType.EDUCATION,
+        DrawerType.ACHIEVEMENTS,
+        DrawerType.CONTACTS
+    ].map((element: DrawerType) =>
         <DrawerItem
             drawerType={element}
-            onDrawerItemClicked={(drawerType: DrawerType) => onDrawerItemClicked(drawerType)}
         ></DrawerItem>
     );
   };
