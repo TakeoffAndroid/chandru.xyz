@@ -10,7 +10,7 @@ export const SubHeaderText = ({text}: SubHeaderProps) => {
         <Typography
             sx={{
                 color: COLORS.secondaryText,
-                fontSize: "18px",
+                fontSize: "16px",
             }}
             variant="inherit"
         >{text}</Typography>
