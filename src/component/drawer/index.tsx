@@ -5,6 +5,7 @@ import Avatar from "@mui/material/Avatar";
 import {Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
+import {COLORS} from "../../values/colors";
 
 export default function NavigationDrawer() {
 
@@ -26,7 +27,7 @@ export default function NavigationDrawer() {
     <Box
       sx={{
         height: "100vh",
-        backgroundColor: "rgba(35, 35, 35, 1)"
+        backgroundColor: COLORS.black
       }}
     >
       <MenuList sx={{ backgroundColor: "transparent" }}>
