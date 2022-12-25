@@ -16,7 +16,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {AboutPage} from "../about";
-import EducationPage from "../education";
 import AchievementPage from "../achievements";
 import ContactPage from "../contacts";
 import {Route, Routes, Navigate} from "react-router-dom"
@@ -24,6 +23,7 @@ import {ProfileData} from "../../component/models/profile_data";
 import NavigationDrawer from "../../component/drawer";
 import {COLORS} from "../../values/colors";
 import {ExperiencePage} from "../experience";
+import {EducationPage} from "../education";
 
 const drawerWidth = 240;
 
@@ -41,13 +41,16 @@ export default function HomePage(props: Props) {
         "subHeader": "Chandrasekar has vast experience in Tech Leadership, Engineering Management, Developer Evangelism, Product Development and Product Management. Throughout his career, he has been advising and evangelising companies to help with his tech expertise in Blockchain, Mobile and Web apps. As an Evangelist, he has taken live sessions, contributed to community open sources and spoken at International tech conferences, hackathons, meetups representing Mobile, Web and Blockchain tech.",
         "tags": ["leadership", "mobile", "frontend", "blockchain", "engineering-management", "developer-relations", "product-management", "product-development"]
         },
-"experience": {
-        "header": "Experience",
+  "experience": {
+        "header": "About",
         "subHeader": "Experience in Hands on development, people management and project management of client facing user apps",
-        "tags": ["android", "ios", "solidity", "flutter", "react", "react-native", "node.js"]
+        "tags": ["android", "ios", "solidity", "flutter", "react", "node.js", "golang"]
+}, "education": {
+        "header": "Education",
+        "subHeader": "BS in Electrical Engineering, MBA in Consultancy Management, MS in Blockchain and Digital Currency",
+        "tags": ["bachelors", "management", "masters"]
 }
-        }
-`
+}`
     const profileData: ProfileData = JSON.parse(json);
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -131,8 +134,8 @@ export default function HomePage(props: Props) {
                     <Route path="/" element={<Navigate to="/about"/>}/>
                     <Route path="/about" element={<AboutPage about={profileData.about}/>}/>
                     <Route path="/experience" element={<ExperiencePage experience={profileData.experience}/>}/>
+                    <Route path="/education" element={<EducationPage education={profileData.education}/>}/>
                     <Route path="/achievement" element={<AchievementPage/>}/>
-                    <Route path="/education" element={<EducationPage/>}/>
                     <Route path="/contacts" element={<ContactPage/>}/>
                 </Routes>
             </Box>

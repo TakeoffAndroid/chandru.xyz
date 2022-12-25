@@ -1,6 +1,7 @@
 export interface ProfileData {
     about: About;
     experience: Experience;
+    education: Education;
 }
 
 export interface About {
@@ -10,6 +11,12 @@ export interface About {
 }
 
 export interface Experience {
+    header:    string;
+    subHeader: string;
+    tags:      string[];
+}
+
+export interface Education {
     header:    string;
     subHeader: string;
     tags:      string[];
