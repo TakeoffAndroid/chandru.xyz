@@ -15,15 +15,15 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { AboutPage } from "../about";
-import ExperiencePage from "../experience";
+import {AboutPage} from "../about";
 import EducationPage from "../education";
 import AchievementPage from "../achievements";
 import ContactPage from "../contacts";
 import {Route, Routes, Navigate} from "react-router-dom"
-import {ProfileData} from "../about/profile_data";
+import {ProfileData} from "../../component/models/profile_data";
 import NavigationDrawer from "../../component/drawer";
 import {COLORS} from "../../values/colors";
+import {ExperiencePage} from "../experience";
 
 const drawerWidth = 240;
 
@@ -39,10 +39,17 @@ export default function HomePage(props: Props) {
     const json = `{ "about": {
         "header": "About",
         "subHeader": "Chandrasekar has vast experience in Tech Leadership, Engineering Management, Developer Evangelism, Product Development and Product Management. Throughout his career, he has been advising and evangelising companies to help with his tech expertise in Blockchain, Mobile and Web apps. As an Evangelist, he has taken live sessions, contributed to community open sources and spoken at International tech conferences, hackathons, meetups representing Mobile, Web and Blockchain tech.",
-        "tags": ["android", "ios", "solidity", "flutter", "react"]}
-        }`
+        "tags": ["leadership", "mobile", "frontend", "blockchain", "engineering-management", "developer-relations", "product-management", "product-development"]
+        },
+"experience": {
+        "header": "Experience",
+        "subHeader": "Experience in Hands on development, people management and project management of client facing user apps",
+        "tags": ["android", "ios", "solidity", "flutter", "react", "react-native", "node.js"]
+}
+        }
+`
     const profileData: ProfileData = JSON.parse(json);
-    const { window } = props;
+    const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
@@ -51,22 +58,22 @@ export default function HomePage(props: Props) {
 
     const drawer = (
         <div>
-            <NavigationDrawer />
+            <NavigationDrawer/>
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
+        <Box sx={{display: 'flex'}}>
+            <CssBaseline/>
             <AppBar
                 position="fixed"
                 elevation={0}
                 sx={{
                     backgroundColor: COLORS.white,
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
+                    width: {sm: `calc(100% - ${drawerWidth}px)`},
+                    ml: {sm: `${drawerWidth}px`},
                 }}
             >
                 <Toolbar>
@@ -75,9 +82,9 @@ export default function HomePage(props: Props) {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' }, color: COLORS.black }}
+                        sx={{mr: 2, display: {sm: 'none'}, color: COLORS.black}}
                     >
-                        <MenuIcon />
+                        <MenuIcon/>
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
                         Responsive drawer
@@ -86,7 +93,7 @@ export default function HomePage(props: Props) {
             </AppBar>
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}
                 aria-label="mailbox folders"
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -99,8 +106,8 @@ export default function HomePage(props: Props) {
                         keepMounted: true, // Better open performance on mobile.
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        display: {xs: 'block', sm: 'none'},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                     }}
                 >
                     {drawer}
@@ -108,8 +115,8 @@ export default function HomePage(props: Props) {
                 <Drawer
                     variant="permanent"
                     sx={{
-                        display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        display: {xs: 'none', sm: 'block'},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
                     }}
                     open
                 >
@@ -118,13 +125,13 @@ export default function HomePage(props: Props) {
             </Box>
             <Box
                 component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{flexGrow: 1, p: 3, width: {sm: `calc(100% - ${drawerWidth}px)`}}}
             >
                 <Routes>
                     <Route path="/" element={<Navigate to="/about"/>}/>
-                    <Route path="/about" element={<AboutPage about={ profileData.about } />}/>
+                    <Route path="/about" element={<AboutPage about={profileData.about}/>}/>
+                    <Route path="/experience" element={<ExperiencePage experience={profileData.experience}/>}/>
                     <Route path="/achievement" element={<AchievementPage/>}/>
-                    <Route path="/experience" element={<ExperiencePage/>}/>
                     <Route path="/education" element={<EducationPage/>}/>
                     <Route path="/contacts" element={<ContactPage/>}/>
                 </Routes>
