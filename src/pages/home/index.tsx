@@ -16,7 +16,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {AboutPage} from "../about";
-import ContactPage from "../contacts";
 import {Route, Routes, Navigate} from "react-router-dom"
 import {ProfileData} from "../../component/models/profile_data";
 import NavigationDrawer from "../../component/drawer";
@@ -24,6 +23,7 @@ import {COLORS} from "../../values/colors";
 import {ExperiencePage} from "../experience";
 import {EducationPage} from "../education";
 import {AchievementPage} from "../achievements";
+import {ContactPage} from "../contacts";
 
 const drawerWidth = 240;
 
@@ -53,8 +53,14 @@ export default function HomePage(props: Props) {
         "header": "Achievements",
         "subHeader": "First person to present a talk on Mastering Android Studio Templates @ Chicago Roboto, Chicago, Live sessions on Flutter Test Pyramids @ Google Developer Group, India, Dev Hiring bootcamp to hire top notch engineers through a week training program, Workshop on Mobile Engineering practics and development, Talk on Cracking the crypto apps @ Avalanche summit, Barcelona",
         "tags": ["talk", "conference", "meetup", "hackathon", "hiring", "bootcamp"]
+},
+  "contact": {
+        "header": "Contacts",
+        "subHeader": "Catchup with me on Twitter, LinkedIn, Gmail",
+        "tags": ["connect", "learn", "establish", "network", "tech", "knowledge", "share"]
 }
-}`
+}
+`
     const profileData: ProfileData = JSON.parse(json);
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -140,7 +146,7 @@ export default function HomePage(props: Props) {
                     <Route path="/experience" element={<ExperiencePage experience={profileData.experience}/>}/>
                     <Route path="/education" element={<EducationPage education={profileData.education}/>}/>
                     <Route path="/achievement" element={<AchievementPage achievement={profileData.achievement}/>}/>
-                    <Route path="/contacts" element={<ContactPage/>}/>
+                    <Route path="/contact" element={<ContactPage contact={profileData.contact}/>}/>
                 </Routes>
             </Box>
         </Box>

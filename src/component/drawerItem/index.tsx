@@ -57,7 +57,7 @@ export const getRoutes = (drawerType: DrawerType) => {
         case DrawerType.ACHIEVEMENTS:
             return "/achievement";
         case DrawerType.CONTACTS:
-            return "/contacts";
+            return "/contact";
     }
 };
 

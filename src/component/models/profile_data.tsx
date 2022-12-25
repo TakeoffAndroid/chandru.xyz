@@ -3,6 +3,7 @@ export interface ProfileData {
     experience: Experience;
     education: Education;
     achievement: Achievement;
+    contact: Contact;
 }
 
 export interface About {
@@ -24,6 +25,12 @@ export interface Education {
 }
 
 export interface Achievement {
+    header:    string;
+    subHeader: string;
+    tags:      string[];
+}
+
+export interface Contact {
     header:    string;
     subHeader: string;
     tags:      string[];
