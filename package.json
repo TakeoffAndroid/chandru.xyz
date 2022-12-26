@@ -1,7 +1,7 @@
 {
   "name": "chandru.xyz",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "http://chandru.xyz",
   "dependencies": {
     "@emotion/react": "^11.10.5",
