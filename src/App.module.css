@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.chipsListItem {
+  display: flex;
+  column-gap: 8px;
+  row-gap: 8px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
