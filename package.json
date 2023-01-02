@@ -2,7 +2,7 @@
   "name": "chandru.xyz",
   "version": "0.1.0",
   "private": false,
-  "homepage": "http://chandru.xyz",
+  "homepage": "https://chandru.xyz",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
