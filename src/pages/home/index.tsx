@@ -39,10 +39,10 @@ export default function HomePage(props: Props) {
     const json = `{ "about": {
         "header": "About",
         "subHeader": "Chandrasekar has vast experience in Tech Leadership, Engineering Management, Developer Evangelism, Product Development and Product Management. Throughout his career, he has been advising and evangelising companies to help with his tech expertise in Blockchain, Mobile and Web apps. As an Evangelist, he has taken live sessions, contributed to community open sources and spoken at International tech conferences, hackathons, meetups representing Mobile, Web and Blockchain tech.",
-        "tags": ["leadership", "mobile", "frontend", "blockchain", "engineering-management", "developer-relations", "product-management", "product-development"]
+        "tags": ["leadership", "engineering-management", "developer-relations", "developer-advocate", "developer-marketing", "product-management", "product-development"]
         },
   "experience": {
-        "header": "About",
+        "header": "Experience",
         "subHeader": "Experience in Hands on development, people management and project management of client facing user apps",
         "tags": ["android", "ios", "solidity", "flutter", "react", "node.js", "golang"]
 }, "education": {
