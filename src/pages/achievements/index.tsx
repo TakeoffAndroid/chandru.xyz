@@ -4,6 +4,7 @@ import {Margin} from "../../component/common/margin";
 import {Banner} from "../../component/common/banner";
 import {PageRoot} from "../../component/common/page";
 import {Achievement} from "../../component/models/profile_data";
+import {ChipList} from "../../component/common/chip";
 
 type AchievementProps = {
   achievement: Achievement
@@ -17,6 +18,8 @@ export const AchievementPage = ({achievement}: AchievementProps) => {
       <HeaderText text={achievement.header}/>
       <Margin top='24px'></Margin>
       <SubHeaderText text={achievement.subHeader}/>
+      <Margin top='24px'></Margin>
+      <ChipList items={ achievement.tags } ></ChipList>
     </PageRoot>
   </>
 

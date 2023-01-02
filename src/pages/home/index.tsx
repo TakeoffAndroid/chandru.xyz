@@ -52,7 +52,7 @@ export default function HomePage(props: Props) {
 }, "achievement": {
         "header": "Achievements",
         "subHeader": "First person to present a talk on Mastering Android Studio Templates @ Chicago Roboto, Chicago, Live sessions on Flutter Test Pyramids @ Google Developer Group, India, Dev Hiring bootcamp to hire top notch engineers through a week training program, Workshop on Mobile Engineering practics and development, Talk on Cracking the crypto apps @ Avalanche summit, Barcelona",
-        "tags": ["talk", "conference", "meetup", "hackathon", "hiring", "bootcamp"]
+        "tags": ["conference", "meetup", "hackathon", "hiring", "bootcamp"]
 },
   "contact": {
         "header": "Contacts",

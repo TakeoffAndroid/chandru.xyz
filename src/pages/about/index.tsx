@@ -4,9 +4,7 @@ import {About} from "../../component/models/profile_data";
 import {Margin} from "../../component/common/margin";
 import {Banner} from "../../component/common/banner";
 import {PageRoot} from "../../component/common/page";
-import Chip from '@mui/material/Chip';
-import styles from "../../App.module.css";
-import ListItem from "@mui/material/ListItem";
+import {ChipList} from "../../component/common/chip";
 
 type AboutProps = {
     about: About
@@ -21,15 +19,7 @@ export const AboutPage = ({about}: AboutProps) => {
             <Margin top='24px'></Margin>
             <SubHeaderText text={about.subHeader}/>
             <Margin top='24px'></Margin>
-            <div className={styles.chipsListItem}>
-            {about.tags.map((data) => {
-                return (
-                        <Chip
-                            label={data}
-                        />
-                );
-            })}
-            </div>
+            <ChipList items={ about.tags } ></ChipList>
         </PageRoot>
     </>
 

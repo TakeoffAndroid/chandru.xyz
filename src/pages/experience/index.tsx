@@ -4,6 +4,7 @@ import {Margin} from "../../component/common/margin";
 import {Banner} from "../../component/common/banner";
 import {PageRoot} from "../../component/common/page";
 import {Experience} from "../../component/models/profile_data";
+import {ChipList} from "../../component/common/chip";
 
 type ExperienceProps = {
   experience: Experience
@@ -17,6 +18,8 @@ export const ExperiencePage = ({experience}: ExperienceProps) => {
       <HeaderText text={experience.header}/>
       <Margin top='24px'></Margin>
       <SubHeaderText text={experience.subHeader}/>
+      <Margin top='24px'></Margin>
+      <ChipList items={ experience.tags } ></ChipList>
     </PageRoot>
   </>
 
