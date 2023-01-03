@@ -14,11 +14,8 @@ export const ContactPage = ({contact}: ContactProps) => {
   return <>
     <Banner image='/assets/images/banner_contact.png'></Banner>
     <PageRoot>
-      <Margin top='24px'></Margin>
       <HeaderText text={contact.header}/>
-      <Margin top='24px'></Margin>
       <SubHeaderText text={contact.subHeader}/>
-      <Margin top='24px'></Margin>
       <ChipList items={ contact.tags } ></ChipList>
     </PageRoot>
   </>

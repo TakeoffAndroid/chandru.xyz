@@ -15,11 +15,8 @@ export const EducationPage = ({education}: EducationProps) => {
   return <>
     <Banner image='/assets/images/banner_education.png'></Banner>
     <PageRoot>
-      <Margin top='24px'></Margin>
       <HeaderText text={education.header}/>
-      <Margin top='24px'></Margin>
       <SubHeaderText text={education.subHeader}/>
-      <Margin top='24px'></Margin>
       <ChipList items={ education.tags } ></ChipList>
     </PageRoot>
   </>

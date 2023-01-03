@@ -8,7 +8,6 @@ import {AchievementPage} from "../achievements";
 import {ContactPage} from "../contacts";
 import {useFetch} from "../../component/hooks/useFetch";
 import {PageRoot} from "../../component/common/page";
-import {CircularProgress} from "@mui/material";
 import {ContentLoading} from "../../component/common/loading";
 
 const PageContentFrame = () => {

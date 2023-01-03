@@ -14,11 +14,8 @@ export const ExperiencePage = ({experience}: ExperienceProps) => {
   return <>
     <Banner image='/assets/images/banner_experience.png'></Banner>
     <PageRoot>
-      <Margin top='24px'></Margin>
       <HeaderText text={experience.header}/>
-      <Margin top='24px'></Margin>
       <SubHeaderText text={experience.subHeader}/>
-      <Margin top='24px'></Margin>
       <ChipList items={ experience.tags } ></ChipList>
     </PageRoot>
   </>

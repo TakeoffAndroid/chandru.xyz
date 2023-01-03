@@ -14,11 +14,8 @@ export const AboutPage = ({about}: AboutProps) => {
     return <>
         <Banner image='/assets/images/banner_about.png'></Banner>
         <PageRoot>
-            <Margin top='24px'></Margin>
             <HeaderText text={about.header}/>
-            <Margin top='24px'></Margin>
             <SubHeaderText text={about.subHeader}/>
-            <Margin top='24px'></Margin>
             <ChipList items={ about.tags } ></ChipList>
         </PageRoot>
     </>

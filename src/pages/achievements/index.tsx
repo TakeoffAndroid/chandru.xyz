@@ -14,11 +14,8 @@ export const AchievementPage = ({achievement}: AchievementProps) => {
   return <>
     <Banner image='/assets/images/banner_achievement.png'></Banner>
     <PageRoot>
-      <Margin top='24px'></Margin>
       <HeaderText text={achievement.header}/>
-      <Margin top='24px'></Margin>
       <SubHeaderText text={achievement.subHeader}/>
-      <Margin top='24px'></Margin>
       <ChipList items={ achievement.tags } ></ChipList>
     </PageRoot>
   </>

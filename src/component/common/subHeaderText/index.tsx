@@ -1,5 +1,5 @@
-import Typography from "@mui/material/Typography";
-import {COLORS} from "../../../values/colors";
+
+import ReactMarkdown from "react-markdown";
 
 type SubHeaderProps = {
     text: string[],
@@ -13,15 +13,8 @@ export const SubHeaderText = ({text}: SubHeaderProps) => {
 
 const renderSubHeaderList = ({text}: SubHeaderProps) => {
     return text.map((data) =>
-        <li>
-            <Typography
-                sx={{
-                    color: COLORS.secondaryText,
-                    fontSize: "16px",
-                }}
-                variant="inherit"
-            >{data}
-            </Typography>
-        </li>
+        <ReactMarkdown>
+            {data}
+        </ReactMarkdown>
     );
 }
