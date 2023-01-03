@@ -1,32 +1,18 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import {AboutPage} from "../about";
 import {Route, Routes, Navigate} from "react-router-dom"
 import {ProfileData} from "../../component/models/profile_data";
-import NavigationDrawer from "../../component/drawer";
-import {COLORS} from "../../values/colors";
 import {ExperiencePage} from "../experience";
 import {EducationPage} from "../education";
 import {AchievementPage} from "../achievements";
 import {ContactPage} from "../contacts";
+import { useState, useEffect } from "react";
 
+const PageContentFrame = () =>  {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
 
-export default function PageContentFrame() {
     const json = `{ "about": {
         "header": "About",
         "subHeader": ["Chandrasekar has vast experience in Tech Leadership, Engineering Management, Developer Evangelism, Product Development and Product Management", "Throughout his career, he has been advising and evangelising companies to help with his tech expertise in Blockchain, Mobile and Web apps", "As an Evangelist, he has taken live sessions, contributed to community open sources and spoken at International tech conferences, hackathons, meetups representing Mobile, Web and Blockchain tech."],
@@ -54,14 +40,40 @@ export default function PageContentFrame() {
 `
     const profileData: ProfileData = JSON.parse(json);
 
-    return (
-                <Routes>
-                    <Route path="/" element={<Navigate to="/about"/>}/>
-                    <Route path="/about" element={<AboutPage about={profileData.about}/>}/>
-                    <Route path="/experience" element={<ExperiencePage experience={profileData.experience}/>}/>
-                    <Route path="/education" element={<EducationPage education={profileData.education}/>}/>
-                    <Route path="/achievement" element={<AchievementPage achievement={profileData.achievement}/>}/>
-                    <Route path="/contact" element={<ContactPage contact={profileData.contact}/>}/>
-                </Routes>
-    );
+    useEffect(() => {
+        fetch("https://unifront.proxy.beeceptor.com/chandru/aboutme")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    console.log("data loaded success")
+                    setIsLoaded(true);
+                    setItems(result);
+                },
+                // Note: it's important to handle errors here
+                // instead of a catch() block so that we don't swallow
+                // exceptions from actual bugs in components.
+                (error) => {
+                    console.log("data loaded with error")
+
+                    setIsLoaded(true);
+                    setError(error);
+                }
+            )
+    }, [])
+    if (error) {
+        return <div> Error: </div>;
+    } else if (!isLoaded) {
+        return <div>Loading...</div>;
+    } else {
+        return <Routes>
+            <Route path="/" element={<Navigate to="/about"/>}/>
+            <Route path="/about" element={<AboutPage about={profileData.about}/>}/>
+            <Route path="/experience" element={<ExperiencePage experience={profileData.experience}/>}/>
+            <Route path="/education" element={<EducationPage education={profileData.education}/>}/>
+            <Route path="/achievement" element={<AchievementPage achievement={profileData.achievement}/>}/>
+            <Route path="/contact" element={<ContactPage contact={profileData.contact}/>}/>
+        </Routes>;
+    }
+
 }
+export default PageContentFrame;
