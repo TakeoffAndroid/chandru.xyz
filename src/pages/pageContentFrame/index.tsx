@@ -6,35 +6,21 @@ import {ExperiencePage} from "../experience";
 import {EducationPage} from "../education";
 import {AchievementPage} from "../achievements";
 import {ContactPage} from "../contacts";
-import { useState, useEffect } from "react";
+import {useFetch} from "../../component/hooks/useFetch";
+import {PageRoot} from "../../component/common/page";
+import {CircularProgress} from "@mui/material";
+import {ContentLoading} from "../../component/common/loading";
 
-const PageContentFrame = () =>  {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [data, setData] = useState(null);
-    useEffect(() => {
-        fetch("https://unifront.proxy.beeceptor.com/chandru/aboutme")
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    console.log("data loaded success")
-                    setIsLoaded(true);
-                    setData(result);
-                },
-                (error) => {
-                    console.log("data loaded with error")
-
-                    setIsLoaded(true);
-                    setError(error);
-                }
-            )
-    }, [])
+const PageContentFrame = () => {
+    const [isLoaded, error, result] = useFetch("https://unifront.proxy.beeceptor.com/chandru/aboutme")
     if (error) {
-        return <div> Error: </div>;
+        return <PageRoot>
+            <div> Error:</div>;
+        </PageRoot>
     } else if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <ContentLoading></ContentLoading>
     } else {
-        const profileData: ProfileData = JSON.parse(JSON.stringify(data));
+        const profileData: ProfileData = JSON.parse(JSON.stringify(result));
         return <Routes>
             <Route path="/" element={<Navigate to="/about"/>}/>
             <Route path="/about" element={<AboutPage about={profileData.about}/>}/>
