@@ -81,7 +81,7 @@ export default function App() {
                     variant="permanent"
                     sx={{
                         display: {xs: 'none', sm: 'block'},
-                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', borderWidth: 0, width: drawerWidth},
                     }}
                     open
                 >
