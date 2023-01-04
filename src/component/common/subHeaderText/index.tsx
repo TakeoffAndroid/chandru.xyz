@@ -13,7 +13,7 @@ export const SubHeaderText = ({text}: SubHeaderProps) => {
 
 const renderSubHeaderList = ({text}: SubHeaderProps) => {
     return text.map((data) =>
-        <ReactMarkdown>
+        <ReactMarkdown linkTarget="_blank">
             {data}
         </ReactMarkdown>
     );
