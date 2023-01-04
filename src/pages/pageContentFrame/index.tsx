@@ -9,9 +9,10 @@ import {ContactPage} from "../contacts";
 import {useFetch} from "../../component/hooks/useFetch";
 import {PageRoot} from "../../component/common/page";
 import {ContentLoading} from "../../component/common/loading";
+import {API_URL} from "../../utils/constants";
 
 const PageContentFrame = () => {
-    const [isLoaded, error, result] = useFetch("https://unifront.proxy.beeceptor.com/chandru/aboutme")
+    const [isLoaded, error, result] = useFetch(API_URL.ABOUT_ME)
     if (error) {
         return <PageRoot>
             <div> Error:</div>;
