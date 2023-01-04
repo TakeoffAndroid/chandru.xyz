@@ -16,6 +16,7 @@ export const ExperiencePage = ({experience}: ExperienceProps) => {
     <PageRoot>
       <HeaderText text={experience.header}/>
       <SubHeaderText text={experience.subHeader}/>
+      <Margin top={ "16px" }/>
       <ChipList items={ experience.tags } ></ChipList>
     </PageRoot>
   </>

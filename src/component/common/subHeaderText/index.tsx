@@ -6,9 +6,9 @@ type SubHeaderProps = {
 }
 
 export const SubHeaderText = ({text}: SubHeaderProps) => {
-    return <ul>
+    return <div>
         {renderSubHeaderList({text})}
-    </ul>
+    </div>
 }
 
 const renderSubHeaderList = ({text}: SubHeaderProps) => {

@@ -16,6 +16,7 @@ export const AchievementPage = ({achievement}: AchievementProps) => {
     <PageRoot>
       <HeaderText text={achievement.header}/>
       <SubHeaderText text={achievement.subHeader}/>
+      <Margin top={ "16px" }/>
       <ChipList items={ achievement.tags } ></ChipList>
     </PageRoot>
   </>

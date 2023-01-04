@@ -16,6 +16,7 @@ export const ContactPage = ({contact}: ContactProps) => {
     <PageRoot>
       <HeaderText text={contact.header}/>
       <SubHeaderText text={contact.subHeader}/>
+      <Margin top={ "16px" }/>
       <ChipList items={ contact.tags } ></ChipList>
     </PageRoot>
   </>

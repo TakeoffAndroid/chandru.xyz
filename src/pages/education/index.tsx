@@ -17,6 +17,7 @@ export const EducationPage = ({education}: EducationProps) => {
     <PageRoot>
       <HeaderText text={education.header}/>
       <SubHeaderText text={education.subHeader}/>
+      <Margin top={ "16px" }/>
       <ChipList items={ education.tags } ></ChipList>
     </PageRoot>
   </>

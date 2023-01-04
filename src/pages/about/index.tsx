@@ -16,6 +16,7 @@ export const AboutPage = ({about}: AboutProps) => {
         <PageRoot>
             <HeaderText text={about.header}/>
             <SubHeaderText text={about.subHeader}/>
+            <Margin top={ "16px" }/>
             <ChipList items={ about.tags } ></ChipList>
         </PageRoot>
     </>
