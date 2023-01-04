@@ -12,8 +12,10 @@ type ExperienceProps = {
 
 export const ExperiencePage = ({experience}: ExperienceProps) => {
   return <>
-    <Banner image='/assets/images/banner_experience.png'></Banner>
     <PageRoot>
+      <Margin top={ "48px" }/>
+      <Banner image='/assets/images/banner_experience.png'></Banner>
+      <Margin top={ "24px" }/>
       <HeaderText text={experience.header}/>
       <SubHeaderText text={experience.subHeader}/>
       <Margin top={ "16px" }/>

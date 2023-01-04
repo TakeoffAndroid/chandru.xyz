@@ -12,8 +12,10 @@ type AchievementProps = {
 
 export const AchievementPage = ({achievement}: AchievementProps) => {
   return <>
-    <Banner image='/assets/images/banner_achievement.png'></Banner>
     <PageRoot>
+      <Margin top={ "48px" }/>
+      <Banner image='/assets/images/banner_achievement.png'></Banner>
+      <Margin top={ "24px" }/>
       <HeaderText text={achievement.header}/>
       <SubHeaderText text={achievement.subHeader}/>
       <Margin top={ "16px" }/>

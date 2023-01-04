@@ -12,8 +12,10 @@ type AboutProps = {
 
 export const AboutPage = ({about}: AboutProps) => {
     return <>
-        <Banner image='/assets/images/banner_about.png'></Banner>
         <PageRoot>
+            <Margin top={ "48px" }/>
+            <Banner image='/assets/images/banner_about.png'></Banner>
+            <Margin top={ "24px" }/>
             <HeaderText text={about.header}/>
             <SubHeaderText text={about.subHeader}/>
             <Margin top={ "16px" }/>

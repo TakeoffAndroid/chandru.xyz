@@ -13,8 +13,10 @@ type EducationProps = {
 
 export const EducationPage = ({education}: EducationProps) => {
   return <>
-    <Banner image='/assets/images/banner_education.png'></Banner>
     <PageRoot>
+      <Margin top={ "48px" }/>
+      <Banner image='/assets/images/banner_education.png'></Banner>
+      <Margin top={ "24px" }/>
       <HeaderText text={education.header}/>
       <SubHeaderText text={education.subHeader}/>
       <Margin top={ "16px" }/>
