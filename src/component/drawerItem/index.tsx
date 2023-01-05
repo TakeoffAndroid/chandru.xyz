@@ -6,6 +6,7 @@ import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import AlternateEmailRoundedIcon from "@mui/icons-material/AlternateEmailRounded";
+import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded';
 import { NavLink } from "react-router-dom";
 
 export enum DrawerType {
@@ -21,7 +22,7 @@ export const renderDrawerIcon = (drawerType: DrawerType) => {
         case DrawerType.ABOUT:
             return <Person4Rounded fontSize="small"/>;
         case DrawerType.EXPERIENCE:
-            return <WorkRoundedIcon fontSize="small"/>;
+            return <DataObjectRoundedIcon fontSize="small"/>;
         case DrawerType.EDUCATION:
             return <SchoolRoundedIcon fontSize="small"/>;
         case DrawerType.ACHIEVEMENTS:
