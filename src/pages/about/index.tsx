@@ -14,7 +14,7 @@ type PageContentProps = {
 export const PageContent = ({bannerUrl, pageData}: PageContentProps) => {
     return <>
         <PageRoot>
-            <Margin top={"48px"}/>
+            <Margin top={"24px"}/>
             <Banner image={bannerUrl}></Banner>
             <Margin top={"24px"}/>
             <HeaderText text={pageData.header}/>
