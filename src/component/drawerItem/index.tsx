@@ -8,13 +8,15 @@ import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import AlternateEmailRoundedIcon from "@mui/icons-material/AlternateEmailRounded";
 import DataObjectRoundedIcon from '@mui/icons-material/DataObjectRounded';
 import { NavLink } from "react-router-dom";
+import {ROUTE_PATH} from "../../utils/constants";
 
 export enum DrawerType {
     ABOUT,
     EXPERIENCE,
     EDUCATION,
     ACHIEVEMENTS,
-    CONTACTS
+    CONTACTS,
+    BLOG
 }
 
 export const renderDrawerIcon = (drawerType: DrawerType) => {
@@ -29,6 +31,8 @@ export const renderDrawerIcon = (drawerType: DrawerType) => {
             return <EmojiEventsRoundedIcon fontSize="small"/>;
         case DrawerType.CONTACTS:
             return <AlternateEmailRoundedIcon fontSize="small"/>;
+        case DrawerType.BLOG:
+            return <WorkRoundedIcon fontSize="small"/>;
     }
 };
 
@@ -44,22 +48,28 @@ export const renderDrawerText = (drawerType: DrawerType) => {
             return "Achievements";
         case DrawerType.CONTACTS:
             return "Contacts";
+        case DrawerType.BLOG:
+            return "Blog";
     }
 };
 
 export const getRoutes = (drawerType: DrawerType) => {
     switch (drawerType) {
         case DrawerType.ABOUT:
-            return "/about";
+            return ROUTE_PATH.ABOUT;
         case DrawerType.EXPERIENCE:
-            return "/experience";
+            return ROUTE_PATH.EXPERIENCE;
         case DrawerType.EDUCATION:
-            return "/education";
+            return ROUTE_PATH.EDUCATION;
         case DrawerType.ACHIEVEMENTS:
-            return "/achievement";
+            return ROUTE_PATH.ACHIEVEMENT;
         case DrawerType.CONTACTS:
-            return "/contact";
+            return ROUTE_PATH.CONTACT;
+        case DrawerType.BLOG:
+            return ROUTE_PATH.BLOG;
     }
+
+
 };
 
 type DrawerItemProps = {

@@ -15,7 +15,8 @@ export default function NavigationDrawer() {
         DrawerType.EXPERIENCE,
         DrawerType.EDUCATION,
         DrawerType.ACHIEVEMENTS,
-        DrawerType.CONTACTS
+        DrawerType.CONTACTS,
+        DrawerType.BLOG
     ].map((element: DrawerType) =>
         <DrawerItem
             drawerType={element}

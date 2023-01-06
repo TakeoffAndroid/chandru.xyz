@@ -5,7 +5,7 @@ import {ProfileData} from "../../component/models/profile_data";
 import {useFetch} from "../../component/hooks/useFetch";
 import {PageRoot} from "../../component/common/page";
 import {ContentLoading} from "../../component/common/loading";
-import {API_URL} from "../../utils/constants";
+import {API_URL, ROUTE_PATH} from "../../utils/constants";
 
 const PageContentFrame = () => {
     const [isLoaded, error, result] = useFetch(API_URL.ABOUT_ME)
@@ -19,11 +19,12 @@ const PageContentFrame = () => {
         const profileData: ProfileData = JSON.parse(JSON.stringify(result));
         return <Routes>
             <Route path="/" element={<Navigate to="/about"/>}/>
-            <Route path="/about" element={<PageContent bannerUrl={"/assets/images/banner_about.png"} pageData={profileData.about}/>}/>
-            <Route path="/experience" element={<PageContent bannerUrl={"/assets/images/banner_experience.png"} pageData={profileData.experience}/>}/>
-            <Route path="/education" element={<PageContent bannerUrl={"/assets/images/banner_education.png"} pageData={profileData.education}/>}/>
-            <Route path="/achievement" element={<PageContent bannerUrl={"/assets/images/banner_achievement.png"} pageData={profileData.achievement}/>}/>
-            <Route path="/contact" element={<PageContent bannerUrl={"/assets/images/banner_contact.png"} pageData={profileData.contact}/>}/>
+            <Route path={ROUTE_PATH.ABOUT} element={<PageContent bannerUrl={"/assets/images/banner_about.png"} pageData={profileData.about}/>}/>
+            <Route path={ROUTE_PATH.EXPERIENCE} element={<PageContent bannerUrl={"/assets/images/banner_experience.png"} pageData={profileData.experience}/>}/>
+            <Route path={ROUTE_PATH.EDUCATION} element={<PageContent bannerUrl={"/assets/images/banner_education.png"} pageData={profileData.education}/>}/>
+            <Route path={ROUTE_PATH.ACHIEVEMENT} element={<PageContent bannerUrl={"/assets/images/banner_achievement.png"} pageData={profileData.achievement}/>}/>
+            <Route path={ROUTE_PATH.CONTACT} element={<PageContent bannerUrl={"/assets/images/banner_contact.png"} pageData={profileData.contact}/>}/>
+            <Route path={ROUTE_PATH.BLOG} element={ <PageContent bannerUrl={"/assets/images/banner_contact.png"} pageData={profileData.contact}/> }/>
         </Routes>;
     }
 
