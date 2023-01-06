@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import MenuItem from "@mui/material/MenuItem";
 import Person4Rounded from "@mui/icons-material/Person4Rounded";
-import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
+import RateReviewRoundedIcon from '@mui/icons-material/RateReviewRounded';
 import SchoolRoundedIcon from "@mui/icons-material/SchoolRounded";
 import EmojiEventsRoundedIcon from "@mui/icons-material/EmojiEventsRounded";
 import AlternateEmailRoundedIcon from "@mui/icons-material/AlternateEmailRounded";
@@ -32,7 +32,7 @@ export const renderDrawerIcon = (drawerType: DrawerType) => {
         case DrawerType.CONTACTS:
             return <AlternateEmailRoundedIcon fontSize="small"/>;
         case DrawerType.BLOG:
-            return <WorkRoundedIcon fontSize="small"/>;
+            return <RateReviewRoundedIcon fontSize="small"/>;
     }
 };
 
