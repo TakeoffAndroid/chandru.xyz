@@ -42,7 +42,7 @@ const BlogPage = () => {
             <Grid container spacing={{ xs: 4, sm: 4, md: 6, lg: 6, xl: 6}}>
                 {blogPost.data.user.publication.posts.map((post) =>
                     <Grid item xs={12} sm={12} md={6} lg={4} xl={3} > <Card sx={{maxWidth: 345, height: 250}}>
-                        <CardActionArea>
+                        <CardActionArea href={"https://chandrudotxyz.hashnode.dev/".concat(post.slug)} target="_blank">
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="div">
                                     {post.title}
