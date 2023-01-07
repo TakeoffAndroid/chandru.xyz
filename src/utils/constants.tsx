@@ -1,5 +1,6 @@
 export const API_URL = {
-    ABOUT_ME: "https://api-chandru-xyz.onrender.com/aboutme"
+    ABOUT_ME: "https://api-chandru-xyz.onrender.com/aboutme",
+    BLOG: "https://api.hashnode.com"
 }
 
 export const ROUTE_PATH = {

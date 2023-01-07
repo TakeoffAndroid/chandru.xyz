@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
 
-export const useFetch = (url: string) => {
+export const useFetch = (url: string, requestOptions?: any | null) => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [result, setResult] = useState(null);
     useEffect(() => {
-        fetch(url)
+        fetch(url, requestOptions)
             .then(res => res.json())
             .then(
                 (result) => {
