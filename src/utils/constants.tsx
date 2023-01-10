@@ -1,5 +1,5 @@
 export const API_URL = {
-    ABOUT_ME: "https://api-chandru-xyz.onrender.com/aboutme",
+    ABOUT_ME: "https://api-chandruxyz-production.up.railway.app/aboutme",
     BLOG: "https://api.hashnode.com"
 }
 
