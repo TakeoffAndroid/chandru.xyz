@@ -49,7 +49,7 @@ export const renderDrawerText = (drawerType: DrawerType) => {
         case DrawerType.CONTACTS:
             return "Contacts";
         case DrawerType.BLOG:
-            return "Blog";
+            return "Blogs";
     }
 };
 
